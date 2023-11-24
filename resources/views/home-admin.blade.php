@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Sudah login</h1>
+    <h1>Sudah login admin</h1>
     <a href="{{url('logout')}}">logout</a>
 </body>
 </html>
