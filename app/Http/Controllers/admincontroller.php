@@ -15,6 +15,25 @@ class admincontroller extends Controller
     }
 
 
+
+    function tbuat(){
+        return view("tambah_admin");
+    }
+    function buat_akun(request $request){
+        $nama = $request->username;
+        $user = $request->fn;
+        $pass = $request->password;
+
+        $masyarakat = DB::table('admin')->insert([
+            
+            'username' => $nama,
+            'password' => Hash::make($pass),//hash
+            'nama_lengkap' => $user,
+        ]);
+        return redirect('/tampilan/admin');
+    }
+
+
     function index(){
         return view("login-admin");
     }
