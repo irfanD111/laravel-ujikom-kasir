@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Sudah login petugas</h1>
-    <a href="{{url('logout')}}">logout</a>
+@include('layout.navbar')
+
 </body>
 </html>
