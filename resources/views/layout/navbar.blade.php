@@ -33,7 +33,26 @@
               <li><a class="dropdown-item" href="#">Stok</a></li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pelanggan</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{url('data-pelanggan')}}">Data Pelanggan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">....</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Penjualan</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{url('data-pelanggan')}}">Penjualan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Data Penjualan</a></li>
+            </ul>
+          </li>
       </ul>
+      </ul>
+      
+      
       <a class="btn btn-outline-light" href="{{url('logout')}}" role="button">Logout</a>
     </div>
   </div>

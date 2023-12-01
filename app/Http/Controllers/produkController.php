@@ -35,7 +35,7 @@ class produkController extends Controller
             'Stok' => $stok
 
         ]);
-        return redirect('/tambah-produk');
+        return redirect('/data-produk');
     }
 
     function tambah_produk(){
