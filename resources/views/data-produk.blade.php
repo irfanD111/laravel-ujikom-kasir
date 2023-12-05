@@ -24,9 +24,9 @@
                 <thead>
                     <tr>
                         <th scope="col" style="text-align: center; width:10%">ID Produk</th>
-                        <th scope="col" style="text-align: center">Nama Produk</th>
+                        <th scope="col" style="text-align: center;">Nama Produk</th>
                         <th scope="col" style="text-align: center">Harga</th>
-                        <th scope="col" style="text-align: center">Stok</th>
+                        <th scope="col" style="text-align: center;" >Stok</th>
                         <th scope="col" style="text-align: center; width:9%;">Opsi</th>
 
                     </tr>
