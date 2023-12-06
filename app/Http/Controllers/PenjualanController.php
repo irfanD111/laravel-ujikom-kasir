@@ -14,4 +14,18 @@ class PenjualanController extends Controller
         $produk = DB::table('produk')->get();
         return view ('/penjualan',['produk'=>$produk]);
     }
+
+    function data_penjualan(){
+        $penjualan = DB::table('pelanggan')
+        ->join('penjualan', 'penjualan.PelangganID', '=', 'pelanggan.PelangganID')
+        ->get();
+        return view ('data-penjualan',['penjualan'=> $penjualan]);
+    }
+
+    function detail_penjualan(){
+        $detail = DB::table('produk')
+        ->join('detailpenjualan', 'detailpenjualan.ProdukID', '=', 'produk.ProdukID')
+        ->get();
+        return view('detail-penjualan',['detail'=> $detail]);
+    }
 }

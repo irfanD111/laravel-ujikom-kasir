@@ -43,7 +43,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{url('penjualan')}}">Penjualan</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Data Penjualan</a></li>
+              <li><a class="dropdown-item" href="{{url('data-penjualan')}}">Data Penjualan</a></li>
             </ul>
           </li>
       </ul>

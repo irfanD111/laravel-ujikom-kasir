@@ -13,6 +13,8 @@ Route::get('/', function () {
 
 
 Route::get('/penjualan',[PenjualanController::class,'penjualan']);
+Route::get('/data-penjualan',[PenjualanController::class,'data_penjualan']);
+Route::get('/detail-penjualan',[PenjualanController::class,'detail_penjualan']);
 
 
 Route::get('/login',[PetugasController::class,'login'])->name('login');
