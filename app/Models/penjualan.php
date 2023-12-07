@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class penjualan extends Model
 {
-//     use HasFactory;
-//     protected $fillable = [
-//         'PenjualanID ',   
-//         'TanggalPenjualan',
-//         'TotalHarga',
-//         'PelangganID ',
-// ];
-//     protected $table="penjualan";    
+    use HasFactory;
+    protected $fillable = [
+        'PenjualanID ',   
+        'TanggalPenjualan',
+        'TotalHarga',
+        'PelangganID ',
+];
+    protected $table="penjualan";    
 }

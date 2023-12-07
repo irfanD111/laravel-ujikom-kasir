@@ -31,7 +31,7 @@
                 <label class="visually-hidden" for="inlineFormInputGroupUsername">Jumlah Produk</label>
                 <div class="input-group">
                     <input type="text" class="form-control" id="inlineFormInputGroupUsername"
-                        placeholder="Jumlah Produk..">
+                        placeholder="Jumlah Produk.." name="qty">
                 </div>
             </div>
             <div class="col-12">

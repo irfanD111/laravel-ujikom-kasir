@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+
 
 class PenjualanController extends Controller
 {
@@ -22,9 +20,11 @@ class PenjualanController extends Controller
         return view ('data-penjualan',['penjualan'=> $penjualan]);
     }
 
-    function detail_penjualan(){
+    function detail_penjualan($id){
         $detail = DB::table('produk')
         ->join('detailpenjualan', 'detailpenjualan.ProdukID', '=', 'produk.ProdukID')
+        ->join('penjualan', 'detailpenjualan.PenjualanID', '=', 'penjualan.PenjualanID')
+        ->join('pelanggan', 'penjualan.PenjualanID','=','pelanggan.PelangganID')
         ->get();
         return view('detail-penjualan',['detail'=> $detail]);
     }
