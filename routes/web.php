@@ -44,9 +44,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tambah-pelanggan',[pelangganController::class, 'tambah_pelanggan']);
     Route::post('/tambah-pelanggan', [pelangganController::class, 'proses_tambah_pelanggan']);
 
-    Route::get('/penjualan',[PenjualanController::class,'penjualan']);
+    Route::get('/tambah-penjualan',[PenjualanController::class,'penjualan']);
+    Route::post('/tambah-penjualan',[PenjualanController::class,'tambah']);
     Route::get('/data-penjualan',[PenjualanController::class,'data_penjualan']);
-    Route::get('/detail-penjualan/{id}',[PenjualanController::class,'detail_penjualan']);
 });
 
 

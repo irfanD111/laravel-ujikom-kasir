@@ -16,54 +16,83 @@
     <h1 style="text-align: center">PENJUALAN</h1>
     <br>
     <div class="container">
-        <form class="row row-cols-lg-auto g-3 align-items-center"
-            style="  display: grid; grid-template-columns: auto auto auto; gap: 10px 10px;">
-            <div class="col-12">
-                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-                <select class="form-select" id="inlineFormSelectPref">
-                    <option selected>Pilih Produk...</option>
-                    @foreach ($produk as $produk)
-                        <option>{{ $produk->NamaProduk }}</option>
+        <form action={{ url('/tambah-penjualan') }} method="POST">
+            @method('POST')
+            @csrf
+            <label class="row row-cols-lg-auto g-3 align-items-center"
+                style="  display: grid; grid-template-columns: auto auto auto; gap: 10px 10px;">
+
+                <div class="col-12">
+                    <select class="form-select"  name="produk">
+                        <option selected>Pilih Produk...</option>
+                        @foreach ($produk as $produk)
+                            <option value="{{$produk->ProdukID}}" >{{ $produk->NamaProduk }}
+                           </option>
+                        @endforeach
+                    </select>
+                </div>
+                <input type="hidden" name="idpenjualan" value={{ $idpenjualan }}>
+                <div class="col-12">
+                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Jumlah Produk</label>
+                    <div class="input-group">
+                        <div class="form-outline" style="width: 22rem;">
+                            <input value="qty" min="1" type="number" id="typeNumber" class="form-control"
+                                placeholder="qty" name="qty" />
+                        </div>
+                    </div>
+                </div>
+                <select class="form-select" name ="pelanggan" >
+                    <option selected>Nama Pelanggan</option>
+                    @foreach ($pelanggan as $pelanggan)
+                        <option value="{{$pelanggan->pelangganID}}" >{{ $pelanggan->NamaPelanggan }}</option>
                     @endforeach
                 </select>
-            </div>
-            <div class="col-12">
-                <label class="visually-hidden" for="inlineFormInputGroupUsername">Jumlah Produk</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="inlineFormInputGroupUsername"
-                        placeholder="Jumlah Produk.." name="qty">
+
+                <div class="col-12">
+                    <button class="btn btn-outline-dark">Tambah</button>
                 </div>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-outline-dark">Tambah</button>
-            </div>
+            </label>
         </form>
     </div>
     <BR><br>
     <div class="container">
-    <div class="table-responsive">
-        <table class="table table-bordered" style="width:80%">
-            <thead >
-                <tr>
-                    <th scope="col" style="text-align: center; width:5%">Nama Produk</th>
-                    <th scope="col" style="text-align: center; width:5%">Harga</th>
-                    <th scope="col" style="text-align: center;width:5%">Qty</th>
-                    <th scope="col" style="text-align: center; width:5%">Sub Total</th>
-                </tr>
-            </thead>
-         
-                <tbody>
+        <div class="table-responsive">
+            <table class="table table-bordered" style="width:80%">
+                <thead>
                     <tr>
-                        <th scope="row" style="text-align: center;">indomie</th>
-                        <td style="text-align: center">4000</td>
-                        <td style="text-align: center">2</td>
-                        <td style="text-align: center">8000</td>
+                        <th scope="col" style="text-align: center; width:5%">no</th>
+                        <th scope="col" style="text-align: center; width:5%">Nama Produk</th>
+                        <th scope="col" style="text-align: center; width:5%">Harga</th>
+                        <th scope="col" style="text-align: center;width:5%">Qty</th>
+                        <th scope="col" style="text-align: center; width:5%">Sub Total</th>
                     </tr>
+                </thead>
+                <?php $no = 1; 
+                      $total_harga = 0?>
+                <tbody>
+                    @foreach($detailpenjualan as $detailpenjualan   )
+                    <tr>
+                        <th>{{$no++}}</th>
+                        <th>{{$detailpenjualan->NamaProduk}}</th>
+                        <th>{{$detailpenjualan->Harga}}</th>
+                        <th>{{$detailpenjualan->JumlahProduk}}</th>
+                        <th>{{$detailpenjualan->SubTotal}}</th>
+                        <?php  $total_harga = $total_harga + $detailpenjualan->SubTotal ?>
+                    </tr>
+                    @endforeach
                 </tbody>
-         
-        </table>
+
+            </table>
+        </div>
     </div>
+    <div class="container">
+    <h1> Total Harga : {{number_format($total_harga,0,',','.')}}</h1>
 </div>
+
+    <form action="{{}}" method="POST">
+        
+    </form>
+
 </body>
 
 </html>

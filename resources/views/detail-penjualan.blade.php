@@ -12,7 +12,7 @@
         <BR>
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead class="table-success">
+                <thead class="table-secondary">
                     <tr>
                         <th scope="col" colspan="7" style="text-align: center">
                             <h1>Detail penjualan</h1>
@@ -39,7 +39,7 @@
                             <td style="text-align: center;">{{$detail->NamaPelanggan}}</td>
                             <td style="text-align: center;">{{$detail->NamaProduk}}</td>
                             <td style="text-align: center;">{{$detail->Harga}}</td>
-                            <td style="text-align: center;"></td>
+                            <td style="text-align: center;">{{$detail->JumlahProduk}}</td>
                             <td style="text-align: center;">{{$detail->SubTotal}}</td>
                         </tr>
                     </tbody>
