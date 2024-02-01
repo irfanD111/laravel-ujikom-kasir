@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="stok" style="position: absolute; left:35%; top:31%; width:50%" value="{{$produk->Stok}}">
+                        name="stok" style="position: absolute; left:35%; top:31%; width:50%" >
                 </div>
                 <div>
                     <a href="{{url('data-produk')}}" type="submit" class="btn btn-outline-dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">

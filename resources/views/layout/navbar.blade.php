@@ -27,7 +27,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{url('data-produk')}}">Data Produk</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Stok</a></li>
+              <li><a class="dropdown-item" href="{{url('stok')}}">Stok</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

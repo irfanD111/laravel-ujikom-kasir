@@ -53,13 +53,38 @@ class PenjualanController extends Controller
         }
        
 
-        $detail= DB::table('detailpenjualan')->insert([
-            'PenjualanID' => $request->idpenjualan,
-            'ProdukID' => $request->produk,
-            'JumlahProduk'=> $request->qty,
-            'SubTotal'=> $request->qty * $produk->Harga,
-        ]);
+        if($produk->Stok - $request->qty < 0){
+            return redirect()->back()->with("info","Stok Tidak Cukup");
+        }else{
+            $detail= DB::table('detailpenjualan')->insert([
+                'PenjualanID' => $request->idpenjualan,
+                'ProdukID' => $request->produk,
+                'JumlahProduk'=> $request->qty,
+                'SubTotal'=> $request->qty * $produk->Harga,
+            ]);
+    
+            DB::table('produk')->where('ProdukID', $request->produk)->update(['stok'=>$produk->Stok - $request->qty]);
+            
+            
+            return redirect()->back();
+        }
         
+    }
+
+    function cancel(request $request,$id){
+        DB::table('detailpenjualan')->where('DetailID','=',$id)->delete();
+
+        
+        return redirect()->back();
+    }
+
+
+
+    function checkout(Request $request){
+        $update=DB::table('penjualan')->where('PenjualanID',$request->idpenjualan)->update([
+            'status'=>"selesai",
+            'TotalHarga'=> $request->total,
+        ]);
         return redirect()->back();
     }
 
@@ -69,6 +94,16 @@ class PenjualanController extends Controller
         ->get();
         // return $penjualan;
         return view ('data-penjualan',['penjualan'=> $penjualan]);
+    }
+
+    function detail(Request $request ,$id){
+        $detail = DB::table('detailpenjualan')
+        ->join('produk', 'produk.ProdukID', '=' ,'detailpenjualan.ProdukID')
+        ->join('penjualan','penjualan.PenjualanID','=','detailpenjualan.PenjualanID')
+        ->where('detailpenjualan.PenjualanID', $id)
+        ->get();
+
+        return view('detail-penjualan',['detail'=> $detail]);
     }
 
 

@@ -45,7 +45,7 @@
                         name="nt" style="position: absolute; left:35%; top:31%; width:50%" required>
                 </div>
                 <div>
-                    <a href="{{ url('data-produk') }}" type="submit" class="btn btn-outline-dark"><svg
+                    <a href="{{ url('data-pelanggan') }}" type="submit" class="btn btn-outline-dark"><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
