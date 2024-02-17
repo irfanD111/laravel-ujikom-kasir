@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <form class="row g-3" action="{{ url('update-produk', $produk->ProdukID) }}" method="POST"
+        <form class="row g-3" action="{{ url('update-produk', $produk->id) }}" method="POST"
             enctype="multipart/form-data">
             @method('POST')
             @csrf

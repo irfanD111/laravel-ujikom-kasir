@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class PenjualanController extends Controller
 {
     function penjualan (){
-        $produk = DB::table('produk')->get();
+        $produk = DB::table('produk')->where('status','tampil')->get();
 
         $pelanggan = DB::table('pelanggan')->get();
 
@@ -29,7 +29,7 @@ class PenjualanController extends Controller
         }
 
         $detailpenjualan=DB::table('produk')->where("PenjualanID", $idpenjualan)
-        ->join("detailpenjualan","produk.ProdukID","=",'detailpenjualan.ProdukID')
+        ->join("detailpenjualan","produk.id","=",'detailpenjualan.ProdukID')
         ->get();
 
 
@@ -37,7 +37,7 @@ class PenjualanController extends Controller
     }
 
     function tambah(Request $request ){
-        $produk = DB::table('produk')->where('ProdukID', $request->produk)->first();
+        $produk = DB::table('produk')->where('id', $request->produk)->first();
 
         // return $produk;
 
@@ -63,7 +63,7 @@ class PenjualanController extends Controller
                 'SubTotal'=> $request->qty * $produk->Harga,
             ]);
     
-            DB::table('produk')->where('ProdukID', $request->produk)->update(['stok'=>$produk->Stok - $request->qty]);
+            DB::table('produk')->where('id', $request->produk)->update(['stok'=>$produk->Stok - $request->qty]);
             
             
             return redirect()->back();
@@ -71,12 +71,12 @@ class PenjualanController extends Controller
         
     }
 
-    function cancel(request $request,$id){
-        DB::table('detailpenjualan')->where('DetailID','=',$id)->delete();
+    // function cancel(request $request,$id){
+    //     DB::table('detailpenjualan')->where('DetailID','=',$id)->delete();
 
         
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
 
 
@@ -96,7 +96,7 @@ class PenjualanController extends Controller
         return view ('data-penjualan',['penjualan'=> $penjualan]);
     }
 
-    function detail(Request $request ,$id){
+    function detail($id){
         $detail = DB::table('detailpenjualan')
         ->join('produk', 'produk.ProdukID', '=' ,'detailpenjualan.ProdukID')
         ->join('penjualan','penjualan.PenjualanID','=','detailpenjualan.PenjualanID')

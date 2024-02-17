@@ -18,12 +18,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'ID',
+        'id',
         'username',
         'password',
         'nama_lengkap',
-        'jabatan'
+        'role'
     ];
+
+    public function hasRole($role)
+    {
+      // check param $role dengan field usertype
+      if ($role == $this->usertype) {
+        return true;
+      }
+   return false;
+    }
 
     /**
      * The attributes that should be hidden for serialization.

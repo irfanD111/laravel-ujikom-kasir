@@ -25,7 +25,7 @@
                 </thead>
                 <thead class="table table-bordered">
                     <tr>
-                        <th scope="col" style="text-align: center; width:10%">ID Penjualan</th>
+                        <th scope="col" style="text-align: center; width:10%">no</th>
                         <th scope="col" style="text-align: center">Tanggal</th>
                         <th scope="col" style="text-align: center">Nama Pelanggan</th>
                         <th scope="col" style="text-align: center">Total</th>
@@ -33,10 +33,12 @@
 
                     </tr>
                 </thead>
+                <?php $no = 1?>
                 @foreach ($penjualan as $penjualan)
                     <tbody class="table table-bordered">
                         <tr>
-                            <th scope="row" style="text-align: center;">{{ $penjualan->PenjualanID }}</th>
+                            <th scope="row" style="text-align: center;">{{ $no++}}</th>
+                            {{-- $penjualan->PenjualanID --}}
                             <td style="text-align: center;">{{ $penjualan->TanggalPenjualan }}</td>
                             <td style="text-align: center;">{{ $penjualan->NamaPelanggan }}</td>
                             <td style="text-align: center;">{{ $penjualan->TotalHarga }}</td>

@@ -22,30 +22,19 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{url('home')}}">Dashboard</a>
         </li>         
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Produk</a>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{url('tambah-penjualan')}}">Penjualan</a>
+          </li> 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Data</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{url('data-produk')}}">Data Produk</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{{url('stok')}}">Stok</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pelanggan</a>
-            <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{url('data-pelanggan')}}">Data Pelanggan</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">....</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Penjualan</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{url('tambah-penjualan')}}">Penjualan</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{{url('data-penjualan')}}">Data Penjualan</a></li>
             </ul>
-          </li>
+          </li> 
       </ul>
       </ul>
       
