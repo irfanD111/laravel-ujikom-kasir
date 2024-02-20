@@ -7,27 +7,28 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\pelangganController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\produkController;
+
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-
-
 Route::get('/login',[PetugasController::class,'login'])->name('login');
 Route::post('/login',[PetugasController::class,'proses_login']);
-Route::get('/tambah-petugas',[PetugasController::class,'tbuat']);
-Route::post('/tambah-petugas',[PetugasController::class,'buat_akun']);
 
 
+
+Route::group(['middleware' => ['Admin']], function () { 
+Route::get('/tambah-akun',[PetugasController::class,'tbuat']);
+Route::post('/tambah-akun',[PetugasController::class,'buat_akun']);
+Route::get('/tambah-admin',[adminController::class, 'tbuat']);
+Route::post('/tambah-admin',[adminController::class,'buat_akun']);
+});
 // Route::get('/login/admin',[adminController::class,'index']);
 // Route::post('/login/admin',[adminController::class,'proses_login']);
 // // Route::get('/tampilan/admin',[adminController::class,'tampilan_admin']);
-// Route::post('/tambah-admin',[adminController::class,'buat_akun']);
-// Route::get('/tambah-admin',[adminController::class, 'tbuat']);
+
 // Route::get('/logout-a',[adminController::class,'logout']);
 
-Route::middleware(['auth'])->group(function () {
+Route::group(['middleware' => ['Petugas']], function () { 
     Route::get('/home', [dashboardController::class,'home']);
     Route::get('/logout',[PetugasController::class,'logout']);
     Route::get('data-produk',[produkController::class,'data_p']);
@@ -53,6 +54,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/detail-penjualan/{id}',[PenjualanController::class,'detail']);
     Route::post('Checkout',[PenjualanController::class,'checkout']);
     // Route ::get('/cancel-produk/{id}', [PenjualanController::class,'cancel']);
-});
+ });
 
 

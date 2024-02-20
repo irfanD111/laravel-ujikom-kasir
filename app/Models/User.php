@@ -27,11 +27,11 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-      // check param $role dengan field usertype
-      if ($role == $this->usertype) {
+    // check param $role dengan field usertype
+    if ($role == $this->role) {
         return true;
-      }
-   return false;
+    }
+    return false;
     }
 
     /**

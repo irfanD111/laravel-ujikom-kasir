@@ -98,7 +98,7 @@ class PenjualanController extends Controller
 
     function detail($id){
         $detail = DB::table('detailpenjualan')
-        ->join('produk', 'produk.ProdukID', '=' ,'detailpenjualan.ProdukID')
+        ->join('produk', 'produk.id', '=' ,'detailpenjualan.ProdukID')
         ->join('penjualan','penjualan.PenjualanID','=','detailpenjualan.PenjualanID')
         ->where('detailpenjualan.PenjualanID', $id)
         ->get();

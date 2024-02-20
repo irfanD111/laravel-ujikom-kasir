@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
+     </script>
 </head>
 <style>
     .card-body {
@@ -19,14 +21,29 @@
         /* Safari 3-8 */
         transform: scale(1.1);
     }
+
+    .alert-dismissible {
+    }
 </style>
 
 <body>
     @include('layout.navbar')
     <div class="container">
         <BR>
-        <BR>
-
+        @if (session('nama'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert"
+                style="width: 60vh; text-align:center; margin:auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+                    <path
+                        d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207" />
+                    <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+                </svg>Hello {{ session('nama') }}
+               
+                
+            </div>
+        @endif
+        <BR><BR>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -67,7 +84,7 @@
                                 <p class="card-text">Produk Terjual</p>
                             </div>
                             <div class="card-footer bg-border" style="background-color: rgb(153 34 45)"><a
-                                    class="link-light  link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0"
+                                    class="icon-link icon-link-hover link-light  link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0"
                                     href="{{ 'data-penjualan' }}">
                                     more info <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
@@ -86,7 +103,7 @@
                                 <p class="card-text"></p>
                             </div>
                             <div class="card-footer bg-border-success"><a
-                                    class="link-light  link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0"
+                                    class="icon-link icon-link-hover link-light  link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0"
                                     href="#">
                                     more info <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
@@ -107,7 +124,7 @@
                                     the card's content.</p>
                             </div>
                             <div class="card-footer bg-border-success"><a
-                                    class="link-light  link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0"
+                                    class="icon-link icon-link-hover link-light  link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0"
                                     href="#">
                                     more info <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
@@ -120,7 +137,13 @@
                 </div>
             </div>
         </div>
+
     </div>
+    <script>
+        setTimeout(function() {
+            $(".alert").fadeIn().delay(3000).fadeOut();
+        });
+    </script>
 </body>
 
 </html>

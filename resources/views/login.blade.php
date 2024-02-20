@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
+    </script>
 </head>
 <body>
   @if(session("salah"))
@@ -23,7 +25,7 @@
             @method("post")
             @csrf 
             <form class="login-form">
-                <h1>login petugas</h1>
+                <h1>login</h1>
                 <input type="text" placeholder="username" name="username"/>
                 <input type="password" placeholder="password" name="password"/>
                 <button type="submit">login</button>
@@ -31,5 +33,8 @@
           </form>
         </div>
     </div>
+    <script> setTimeout(function() {
+      $(".alert").fadeIn().delay(3000).fadeOut();
+  });</script>
 </body>
 </html>

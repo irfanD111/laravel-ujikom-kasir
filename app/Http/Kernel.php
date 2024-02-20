@@ -38,6 +38,11 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        'Checkrole' => [
+            \App\Http\Middleware\Admin::class,
+            \App\Http\Middleware\Petugas::class,
+        ],
+
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
@@ -65,6 +70,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
-        
+        'Admin' => \App\Http\Middleware\Admin::class,
+        'Petugas' => \App\Http\Middleware\Petugas::class,
+        'role' => \App\Http\Middleware\CheckRole::class,
     ];
 }

@@ -14,27 +14,29 @@ class PetugasController extends Controller
     }
 
     function tbuat(){
-        return view("tambah_petugas");
+        return view("tambah_akun");
     }
 
     function buat_akun(request $request){
         $nama = $request->username;
         $user = $request->fn;
         $pass = $request->password;
+        $role = $request->role;
 
-        $masyarakat = DB::table('petugas')->insert([
+        DB::table('petugas')->insert([
             
             'username' => $nama,
             'password' => Hash::make($pass),//hash
             'nama_lengkap' => $user,
+            'role' => $role,
         ]);
-        return redirect('/tampilan/admin');
+        return redirect('/login');
     }
 
     function proses_login(request $request){
         $datalogin = $request->only("username","password");
         if (Auth::attempt($datalogin)) {
-           return redirect('/home');
+           return redirect('/home')->with("nama",$request->username);
         }else{
            return redirect('/login')->with("salah","username atau password salah");
         }

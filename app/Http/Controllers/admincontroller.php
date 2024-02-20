@@ -30,7 +30,7 @@ class admincontroller extends Controller
             'password' => Hash::make($pass),//hash
             'nama_lengkap' => $user,
         ]);
-        return redirect('/tampilan/admin');
+        return redirect('/home');
     }
 
 
