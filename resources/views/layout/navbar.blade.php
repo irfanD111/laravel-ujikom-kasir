@@ -33,6 +33,8 @@
               <li><a class="dropdown-item" href="{{url('data-pelanggan')}}">Data Pelanggan</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{{url('data-penjualan')}}">Data Penjualan</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{url('data-karyawan')}}">Data Karyawan</a></li>
             </ul>
           </li> 
       </ul>

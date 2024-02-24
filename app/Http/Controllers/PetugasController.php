@@ -27,7 +27,7 @@ class PetugasController extends Controller
             
             'username' => $nama,
             'password' => Hash::make($pass),//hash
-            'nama_lengkap' => $user,
+            'Fullname' => $user,
             'role' => $role,
         ]);
         return redirect('/login');
@@ -48,4 +48,13 @@ class PetugasController extends Controller
 
         return redirect('/login');
     }   
-}
+
+
+    function data(){
+       $data = DB::table('petugas')->orderBy('role','asc')->orderBy('Fullname','asc')->get();
+
+
+
+        return view('/data-karyawan',['data' => $data]);
+    }
+    }

@@ -18,10 +18,8 @@
             @method('POST')
             @csrf
             <div class="row g-3 align-items-center">
-                <h1 style="text-align: center">Update Pelanggan</h1>
-                <div class="col-auto">
-                    <label class="col-form-label">Nama</label>
-                </div>
+                <h1>Update Pelanggan</h1>
+                <label class="col-form-label">Nama</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
                         name="nama" style="position: absolute;
@@ -30,9 +28,7 @@
                 </div>
             </div>
             <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label class="col-form-label">Alamat</label>
-                </div>
+                <label class="col-form-label">Alamat</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
                         name="alamat" style="position: absolute; left:35%; top:22%; width:50%"
@@ -40,9 +36,7 @@
                 </div>
             </div>
             <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label class="col-form-label">NO.Telp</label>
-                </div>
+                <label class="col-form-label">NO.Telp</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
                         name="nt" style="position: absolute; left:35%; top:31%; width:50%"

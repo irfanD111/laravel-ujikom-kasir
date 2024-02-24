@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
-     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <style>
     .card-body {
@@ -22,8 +21,7 @@
         transform: scale(1.1);
     }
 
-    .alert-dismissible {
-    }
+    .alert-dismissible {}
 </style>
 
 <body>
@@ -39,8 +37,8 @@
                         d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207" />
                     <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
                 </svg>Hello {{ session('nama') }}
-               
-                
+
+
             </div>
         @endif
         <BR><BR>
@@ -118,10 +116,8 @@
                     <div class="col">
                         <div class="card text-bg-success mb-3" style="max-width: 23rem; width:19rem">
                             <div class="card-body">
-                                <h5 class="card-title">Success card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of
-                                    the card's content.</p>
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"></p>
                             </div>
                             <div class="card-footer bg-border-success"><a
                                     class="icon-link icon-link-hover link-light  link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0"

@@ -72,6 +72,5 @@ class Kernel extends HttpKernel
 
         'Admin' => \App\Http\Middleware\Admin::class,
         'Petugas' => \App\Http\Middleware\Petugas::class,
-        'role' => \App\Http\Middleware\CheckRole::class,
     ];
 }

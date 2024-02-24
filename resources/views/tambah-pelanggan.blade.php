@@ -17,32 +17,25 @@
             @method('POST')
             @csrf
             <div class="row g-3 align-items-center">
-                <h1 style="text-align: center">Tambah pelanggan</h1>
-                <div class="col-auto">
-                    <label class="col-form-label">Nama</label>
-                </div>
+                <h1>Tambah pelanggan</h1>
+                <label class="col-form-label">Nama</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="nama" style="position: absolute;
-          left:35%; top:12%; width:50%" required>
+                        name="nama" required>
                 </div>
             </div>
             <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label class="col-form-label">Alamat</label>
-                </div>
+                <label class="col-form-label">Alamat</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="alamat" style="position: absolute; left:35%; top:22%; width:50%" required>
+                        name="alamat" required>
                 </div>
             </div>
             <div class="row g-3 align-items-center">
-                <div class="col-auto">
-                    <label class="col-form-label">No.telp</label>
-                </div>
+                <label class="col-form-label">No.telp</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="nt" style="position: absolute; left:35%; top:31%; width:50%" required>
+                        name="nt" required>
                 </div>
                 <div>
                     <a href="{{ url('data-pelanggan') }}" type="submit" class="btn btn-outline-dark"><svg

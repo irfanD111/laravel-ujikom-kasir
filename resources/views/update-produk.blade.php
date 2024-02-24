@@ -10,38 +10,31 @@
 
 </head>
 
-<body>
+<body style="margin: 0;">
     <div class="container">
         <form class="row g-3" action="{{ url('update-produk', $produk->id) }}" method="POST"
             enctype="multipart/form-data">
             @method('POST')
             @csrf
             <div class="row g-3 align-items-center">
-              <h1 style="text-align: center">Update Produk</h1>
+              <h1 >Update Produk</h1>
+                    <label class="col-form-label">Nama Produk</label>              
                 <div class="col-auto">
-                    <label class="col-form-label">Nama Produk</label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" name="np" style="position: absolute;
-                    left:35%; top:12%; width:50%" value="{{$produk->NamaProduk}}" required>
+                    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" name="np"  value="{{$produk->NamaProduk}}" required>
                 </div>
             </div>
-            <div class="row g-3 align-items-center">
-                <div class="col-auto">
+            <div class="row g-3 align-items-center">             
                     <label class="col-form-label">Harga</label>
-                </div>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="harga" style="position: absolute; left:35%; top:22%; width:50%" value="{{$produk->Harga}}" required>
+                        name="harga" value="{{$produk->Harga}}" required>
                 </div>
             </div>
             <div class="row g-3 align-items-center">
-                <div class="col-auto">
                     <label class="col-form-label">STOK</label>
-                </div>
                 <div class="col-auto">
-                    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="stok" style="position: absolute; left:35%; top:31%; width:50%" >
+                    <input type="number" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
+                        name="stok" >
                 </div>
                 <div>
                     <a href="{{url('data-produk')}}" type="submit" class="btn btn-outline-dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
