@@ -18,6 +18,7 @@ Route::post('/login',[PetugasController::class,'proses_login']);
 Route::group(['middleware' => ['Admin']], function () { 
 Route::get('/tambah-akun',[PetugasController::class,'tbuat']);
 Route::post('/tambah-akun',[PetugasController::class,'buat_akun']);
+Route::get('/data-karyawan',[PetugasController::class,'data']);
 });
 // Route::get('/login/admin',[adminController::class,'index']);
 // Route::post('/login/admin',[adminController::class,'proses_login']);
@@ -34,7 +35,7 @@ Route::group(['middleware' => ['Petugas']], function () {
     Route ::get('/restore-produk/{id}', [produkController::class,'restore']);
     Route ::get('/update-produk/{id}', [produkController::class, 'update']);
     Route ::post('/update-produk/{id}', [produkController::class, 'proses_update']);
-    Route::get('/data-karyawan',[PetugasController::class,'data']);
+   
 
     // Route::get('stok', [produkController::class,'stok']);
 
@@ -52,6 +53,7 @@ Route::group(['middleware' => ['Petugas']], function () {
     Route::get('/data-penjualan',[PenjualanController::class,'data_penjualan']);
     Route::get('/detail-penjualan/{id}',[PenjualanController::class,'detail']);
     Route::post('Checkout',[PenjualanController::class,'checkout']);
+    Route::get('/cetak-struk/{penjualan_id}', [penjualanController::class, 'cetakStruk']);
 
     // Route ::get('/cancel-produk/{id}', [PenjualanController::class,'cancel']);
  });

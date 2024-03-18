@@ -106,5 +106,26 @@ class PenjualanController extends Controller
         return view('detail-penjualan',['detail'=> $detail]);
     }
 
+    public function cetakStruk(Request $request, $id)
+    {
+        
+        $count =DB::table('detailpenjualan')->where('PenjualanID',$id)->sum('PenjualanID');
+
+        $penjualan = DB::table('penjualan')
+            ->where('PenjualanID', $id)
+            ->first();
+    
+        $detail = DB::table('detailpenjualan')
+            ->join('produk', 'produk.id', '=', 'detailpenjualan.ProdukID')
+            ->where('detailpenjualan.PenjualanID', $id)
+            ->get();
+    
+            $percobaan = DB::table('penjualan')
+            ->join('pelanggan', 'pelanggan.pelangganID', '=', 'penjualan.pelangganID')
+            ->get();
+        
+        return view('cetak-struk', ['detail' => $detail, 'penjualan' => $penjualan,'count'=>$count,'percobaan'=>$percobaan]);
+    }
+
 
 }

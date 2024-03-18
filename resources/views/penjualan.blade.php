@@ -31,8 +31,8 @@
                 style="  display: grid; grid-template-columns: auto auto auto; gap: 10px 10px;">
 
                 <div class="col-12">
-                    <select class="form-select" name="produk">
-                        <option selected>Pilih Produk...</option>
+                    <select class="form-select" name="produk" required>
+                        <option value="" selected hidden >Pilih Produk...</option>
                         @foreach ($produk as $produk)
                             <option value="{{ $produk->id }}">{{ $produk->NamaProduk }}
                             </option>
@@ -44,13 +44,14 @@
                     <label class="visually-hidden" for="inlineFormInputGroupUsername">Jumlah Produk</label>
                     <div class="input-group">
                         <div class="form-outline" data-mdb-input-init>
-                            <input type="number" id="typeNumber" class="form-control" value="qty" name="qty" min="1" placeholder="qty" />
+                            <input type="number" id="typeNumber" class="form-control" value="qty" name="qty" min="1" placeholder="qty" required />
                           </div>
                     </div>
                    
                 </div>
-                <select class="form-select" name ="pelanggan">
-                    <option selected>Nama Pelanggan</option>
+                
+                <select class="form-select" name ="pelanggan" required>
+                    <option value="" selected hidden  >Nama Pelanggan</option>
                     @foreach ($pelanggan as $pelanggan)
                         <option value="{{ $pelanggan->pelangganID }}">{{ $pelanggan->NamaPelanggan }}</option>
                     @endforeach

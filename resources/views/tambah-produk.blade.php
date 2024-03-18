@@ -10,7 +10,17 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
-
+<style>
+     input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+               -webkit-appearance: none;
+                margin: 0;
+        }
+ 
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+</style>
 <body style="margin: 0; ">
     <div class="container"
       >
@@ -29,14 +39,14 @@
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
                     <label class="col-form-label" >Harga</label>
-                    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
+                    <input type="number" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
                         name="harga" required>
                 </div>
             </div>
             <div class="row g-3 align-items-center">
                 <div class="col-auto">
                     <label class="col-form-label" >STOK</label>
-                    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
+                    <input type="number" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
                         name="stok" required>
                 </div>
                 <div>

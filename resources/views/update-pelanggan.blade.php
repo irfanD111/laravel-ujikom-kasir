@@ -22,8 +22,7 @@
                 <label class="col-form-label">Nama</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="nama" style="position: absolute;
-                    left:35%; top:12%; width:50%"
+                        name="nama"
                         value="{{ $pelanggan->NamaPelanggan }}" required>
                 </div>
             </div>
@@ -31,7 +30,7 @@
                 <label class="col-form-label">Alamat</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="alamat" style="position: absolute; left:35%; top:22%; width:50%"
+                        name="alamat" 
                         value="{{ $pelanggan->Alamat }}" required>
                 </div>
             </div>
@@ -39,7 +38,7 @@
                 <label class="col-form-label">NO.Telp</label>
                 <div class="col-auto">
                     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
-                        name="nt" style="position: absolute; left:35%; top:31%; width:50%"
+                        name="nt"
                         value="{{ $pelanggan->NomorTelepon }}" required>
                 </div>
                 <div>
@@ -51,7 +50,7 @@
                             <path fill-rule="evenodd"
                                 d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
                         </svg> kembali</a>
-                    <button type="submit" class="btn btn-outline-secondary" style="width: 80px">Update</button>
+                    <button type="submit" class="btn btn-outline-dark" style="width: 80px">Update</button>
                 </div>
         </form>
     </div>

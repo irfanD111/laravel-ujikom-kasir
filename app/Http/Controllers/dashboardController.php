@@ -13,7 +13,9 @@ class dashboardController extends Controller
 
         $data = DB::table('detailpenjualan')->sum('JumlahProduk');
 
-        return view ('/home',['count'=>$count,'jumlah'=>$data]);
+        $k = DB::table('petugas')->count();   
+
+        return view ('/home',['count'=>$count,'jumlah'=>$data,'k'=>$k]);
 
     }
 }

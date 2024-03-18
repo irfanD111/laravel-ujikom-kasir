@@ -42,7 +42,10 @@
         </div>
         <h1> Total Harga : {{ number_format($detail->TotalHarga, 0, ',', '.') }}</h1>
         <div>
-            <a href="{{ url('data-penjualan') }}" type="submit" class="btn btn-outline-dark"><svg
+        <a href="/cetak-struk/{{$detail->PenjualanID}}" class="btn btn-outline-success" style="float: right"  >cetak</a>
+        </div>
+        <div>
+            <a href="{{ url('data-penjualan') }}" type="submit" class="btn btn-outline-dark" style="display: inline-block"><svg
                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"

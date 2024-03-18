@@ -10,6 +10,17 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+               -webkit-appearance: none;
+                margin: 0;
+        }
+ 
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+</style>
 
 <body>
     <div class="container">
@@ -34,7 +45,7 @@
             <div class="row g-3 align-items-center">
                 <label class="col-form-label">No.telp</label>
                 <div class="col-auto">
-                    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
+                    <input type="number" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
                         name="nt" required>
                 </div>
                 <div>
@@ -46,7 +57,7 @@
                             <path fill-rule="evenodd"
                                 d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
                         </svg> kembali</a>
-                    <button type="submit" class="btn btn-outline-secondary" style="width:80px">Tambah</button>
+                    <button type="submit" class="btn btn-outline-dark" style="width:80px">Tambah</button>
                 </div>
         </form>
     </div>
